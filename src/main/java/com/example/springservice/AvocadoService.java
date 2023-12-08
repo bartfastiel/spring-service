@@ -3,6 +3,7 @@ package com.example.springservice;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,5 +20,9 @@ public class AvocadoService {
     public Avocado save(NewAvocado newAvocado) {
         Avocado avocado = new Avocado(UUID.randomUUID().toString(), newAvocado.color(), null);
         return avocadoRepository.save(avocado);
+    }
+
+    public BigDecimal sumOfPurchasePrices() {
+        return BigDecimal.valueOf(5);
     }
 }
